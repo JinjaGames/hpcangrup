@@ -86,6 +86,11 @@
     background:var(--gold-500); transition:width .3s ease;
   }
   .nav-link:hover::after{width:100%;}
+  /* Küçük masaüstü ekranlarda menü bağlantıları tek satırda kalsın */
+  @media (min-width:1024px) and (max-width:1279px){
+    header nav.nav-compact{gap:.8rem; font-size:.75rem;}
+    header nav.nav-compact a{white-space:nowrap;}
+  }
 
   .card-lift{transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease;}
   .card-lift:hover{transform:translateY(-8px); box-shadow:0 30px 60px -20px rgba(11,30,61,0.35);}
@@ -243,10 +248,11 @@
         </a>
 
         <!-- Desktop Nav -->
-        <nav class="hidden lg:flex items-center gap-8 font-medium text-xs md:text-sm text-stone-200 uppercase tracking-wider">
+        <nav class="nav-compact hidden lg:flex items-center gap-8 font-medium text-xs md:text-sm text-stone-200 uppercase tracking-wider">
           <a href="#home" class="nav-link py-2">Ana Sayfa</a>
+          <a href="#muteahhitlik" class="nav-link py-2 text-[color:var(--gold-400)] font-semibold">Müteahhitlik</a>
           <a href="#tarihce" class="nav-link py-2">Tarihçe</a>
-          <a href="#grup-sirketleri" class="nav-link py-2 text-[color:var(--gold-400)] font-semibold">Grup Şirketlerimiz</a>
+          <a href="#grup-sirketleri" class="nav-link py-2">Grup Şirketlerimiz</a>
           <a href="#projeler" class="nav-link py-2">Tamamlanan Projeler</a>
           <a href="#devam-eden-projeler" class="nav-link py-2">Devam Eden Projeler</a>
           <a href="#iletisim" class="nav-link py-2">İletişim</a>
@@ -264,8 +270,9 @@
   <div id="mobileMenu" class="lg:hidden fixed inset-0 top-20 bg-[color:var(--navy-950)] translate-x-full transition-transform duration-400 ease-out overflow-y-auto">
     <nav class="flex flex-col px-6 py-8 gap-1 font-display text-2xl text-white font-semibold">
       <a href="#home" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between">Ana Sayfa <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
+      <a href="#muteahhitlik" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between text-[color:var(--gold-400)]">Müteahhitlik <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
       <a href="#tarihce" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between">Tarihçe <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
-      <a href="#grup-sirketleri" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between text-[color:var(--gold-400)]">Grup Şirketlerimiz <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
+      <a href="#grup-sirketleri" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between">Grup Şirketlerimiz <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
       <a href="#projeler" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between">Tamamlanan Projeler <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
       <a href="#devam-eden-projeler" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between">Devam Eden Projeler <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
       <a href="#iletisim" class="mobile-link py-3.5 border-b border-white/10 flex items-center justify-between">İletişim <i data-lucide="arrow-right" class="w-5 h-5 text-[color:var(--gold-500)]"></i></a>
@@ -342,15 +349,15 @@
       </h1>
 
       <p class="text-stone-300 text-base md:text-lg max-w-2xl mb-8 leading-relaxed reveal font-normal">
-        İnşaat ve taahhüt projelerimizdeki lüks, güvenlik ve mühendislik uzmanlığımız; şantiye taşeronluk gücümüz ve <span class="text-white font-semibold underline decoration-[color:var(--gold-500)]">Yeni Diyarbakır Seyahat</span> otobüs filomuz ile HPCANGRUP çatısı altında birleşiyor.
+        <span class="text-white font-semibold">Müteahhidi olduğumuz</span> projelerdeki lüks, güvenlik ve mühendislik uzmanlığımız; güçlü iş ortaklıklarımız ve <span class="text-white font-semibold underline decoration-[color:var(--gold-500)]">Yeni Diyarbakır Seyahat</span> otobüs filomuz ile HPCANGRUP çatısı altında birleşiyor.
       </p>
 
       <div class="flex flex-wrap gap-4 reveal">
-        <a href="#grup-sirketleri" class="btn-shimmer inline-flex items-center gap-3 bg-[color:var(--gold-500)] hover:bg-[color:var(--gold-400)] text-[color:var(--navy-950)] px-8 py-4 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[color:var(--gold-500)]/10 hover:-translate-y-0.5">
-          Grup Şirketlerimiz <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        <a href="#muteahhitlik" class="btn-shimmer inline-flex items-center gap-3 bg-[color:var(--gold-500)] hover:bg-[color:var(--gold-400)] text-[color:var(--navy-950)] px-8 py-4 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[color:var(--gold-500)]/10 hover:-translate-y-0.5">
+          Müteahhitlik Projelerimiz <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
-        <a href="#projeler" class="btn-shimmer inline-flex items-center gap-3 border border-white/30 text-white hover:border-[color:var(--gold-500)] hover:text-[color:var(--gold-400)] backdrop-blur-md px-8 py-4 font-bold text-xs uppercase tracking-wider transition-colors hover:-translate-y-0.5">
-          Projelerimizi İnceleyin <i data-lucide="building-2" class="w-4 h-4"></i>
+        <a href="#grup-sirketleri" class="btn-shimmer inline-flex items-center gap-3 border border-white/30 text-white hover:border-[color:var(--gold-500)] hover:text-[color:var(--gold-400)] backdrop-blur-md px-8 py-4 font-bold text-xs uppercase tracking-wider transition-colors hover:-translate-y-0.5">
+          Grup Şirketlerimiz <i data-lucide="building-2" class="w-4 h-4"></i>
         </a>
       </div>
     </div>
@@ -399,6 +406,64 @@
     </div>
   </div>
 
+</section>
+
+<!-- ========== MÜTEAHHİDİ OLDUĞUMUZ PROJELER ========== -->
+<section id="muteahhitlik" class="py-24 md:py-32 bg-[color:var(--navy-900)] text-white relative overflow-hidden border-t border-[color:var(--gold-500)]/20">
+  <div class="absolute inset-0 blueprint-grid-lg blueprint-grid-lg-animated opacity-20 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <span class="font-mono text-xs tracking-[0.3em] text-[color:var(--gold-500)] uppercase">Aktif Şantiyelerimiz</span>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 text-white font-extrabold">Müteahhidi Olduğumuz Projeler</h2>
+      <p class="text-stone-300 text-sm mt-4 leading-relaxed">HPCANGRUP müteahhitliğinde yükselen projelerimizde çalışmalarımız aralıksız sürüyor.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <article class="bracket group gold-edge bg-[color:var(--navy-950)] border border-[color:var(--gold-500)]/40 reveal-scale flex flex-col">
+        <div class="h-64 sm:h-80 relative overflow-hidden">
+          <img loading="lazy" src="assets/dikmen.jpg" alt="HP PANORAMA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Müteahhit</span>
+          <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--navy-950)] text-white px-3 py-1 font-bold">Devam Ediyor</span>
+        </div>
+        <div class="p-6 md:p-10 flex flex-col gap-6 flex-1">
+          <div>
+            <p class="font-mono text-[11px] text-stone-400 mb-2 uppercase tracking-wider">Ticari + Konut · Ankara</p>
+            <h3 class="font-display text-3xl md:text-5xl text-white font-extrabold leading-tight">HP PANORAMA</h3>
+            <p class="font-mono text-xs text-[color:var(--gold-400)] font-bold tracking-widest uppercase mt-3">Müteahhit: HPCANGRUP A.Ş.</p>
+          </div>
+          <div class="mt-auto">
+            <div class="flex items-center justify-between font-mono text-[11px] text-stone-300 mb-1.5">
+              <span>İnşaat İlerlemesi</span><span class="text-[color:var(--gold-400)] font-bold">%11</span>
+            </div>
+            <div class="progress-track progress-track-dark"><div class="progress-fill" style="width:11%"></div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bracket group gold-edge bg-[color:var(--navy-950)] border border-[color:var(--gold-500)]/40 reveal-scale flex flex-col">
+        <div class="h-64 sm:h-80 relative overflow-hidden">
+          <img loading="lazy" src="assets/polioncakirlar2.jpg" alt="POLİON ÇAKIRLAR 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Müteahhit</span>
+          <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--navy-950)] text-white px-3 py-1 font-bold">Devam Ediyor</span>
+        </div>
+        <div class="p-6 md:p-10 flex flex-col gap-6 flex-1">
+          <div>
+            <p class="font-mono text-[11px] text-stone-400 mb-2 uppercase tracking-wider">Konut · Ankara</p>
+            <h3 class="font-display text-3xl md:text-5xl text-white font-extrabold leading-tight">POLİON ÇAKIRLAR 2</h3>
+            <p class="font-mono text-xs text-[color:var(--gold-400)] font-bold tracking-widest uppercase mt-3">Müteahhit: HPCANGRUP A.Ş.</p>
+          </div>
+          <div class="mt-auto">
+            <div class="flex items-center justify-between font-mono text-[11px] text-stone-300 mb-1.5">
+              <span>İnşaat İlerlemesi</span><span class="text-[color:var(--gold-400)] font-bold">%1</span>
+            </div>
+            <div class="progress-track progress-track-dark"><div class="progress-fill" style="width:1%"></div></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </section>
 
 <!-- ========== TARİHÇE ========== -->
@@ -459,13 +524,13 @@
       <article id="insaat" class="bracket gold-edge bg-[color:var(--navy-950)] text-white card-lift reveal flex flex-col justify-between">
         <div>
           <div class="h-60 relative overflow-hidden bg-stone-800">
-            <img src="assets/kart-insaat.jpg" alt="İnşaat Taahhüt Projesi" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
+            <img src="assets/kart-insaat.jpg" alt="Müteahhitlik ve Taahhüt Projesi" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500">
             <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Ana Sektör</span>
           </div>
           <div class="p-8">
-            <h3 class="font-display text-2xl md:text-3xl mb-3 font-bold">İnşaat & Taahhüt</h3>
+            <h3 class="font-display text-2xl md:text-3xl mb-3 font-bold">Müteahhitlik & Taahhüt</h3>
             <p class="text-stone-300 text-sm leading-relaxed mb-6">
-              Konut, ticari yapılar ve kamu altyapı projelerinde anahtar teslim mühendislik ve uygulama çözümleri sunuyoruz.
+              Konut, ticari yapılar ve kamu altyapı projelerinde müteahhit olarak anahtar teslim mühendislik ve uygulama çözümleri sunuyoruz.
             </p>
             <ul class="space-y-2 mb-6 font-mono text-xs text-stone-300">
               <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-[color:var(--gold-500)]"></i> Konut & Ticari Projeler</li>
@@ -474,8 +539,8 @@
           </div>
         </div>
         <div class="px-8 pb-8">
-          <a href="#projeler" class="inline-flex items-center gap-2 text-[color:var(--gold-400)] text-sm font-bold uppercase tracking-wide group">
-            Projelerimizi Gör <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          <a href="#muteahhitlik" class="inline-flex items-center gap-2 text-[color:var(--gold-400)] text-sm font-bold uppercase tracking-wide group">
+            Müteahhitlik Projelerimiz <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </a>
         </div>
       </article>
@@ -609,6 +674,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/arena.jpg" alt="ATAŞEHİR ARENA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -625,6 +691,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/serra.jpg" alt="SERRA BULVAR & CADDE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -636,6 +703,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/atasehirbatikent.jpg" alt="ATAŞEHİR BATIKENT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -650,6 +718,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/polion1.jpg" alt="POLİON ÇAKIRLAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -661,6 +730,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/view1.jpg" alt="GÖKDEMİR VİEW" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -675,6 +745,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/diamon11.jpg" alt="DIAMOND YAŞAMKENT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -689,6 +760,7 @@
       <article class="group gold-edge reveal-scale">
         <div class="h-64 bg-stone-200 relative overflow-hidden">
           <img loading="lazy" src="assets/kayalarkule.jpg" alt="KAYALAR KULE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-900)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Tamamlandı</span>
         </div>
         <div class="pt-4">
@@ -710,36 +782,18 @@
   <div class="relative max-w-7xl mx-auto px-5 md:px-8">
     <div class="flex flex-wrap items-end justify-between gap-6 mb-16 reveal">
       <div class="max-w-xl">
-        <span class="font-mono text-xs tracking-[0.3em] text-[color:var(--gold-500)] uppercase">Aktif Şantiyelerimiz</span>
-        <h2 class="font-display text-4xl md:text-5xl mt-4 text-white font-extrabold">Devam Eden Projeler</h2>
-        <p class="text-stone-300 text-sm mt-4 leading-relaxed">Türkiye genelinde farklı şehirlerde inşaat çalışmalarımız aralıksız sürüyor.</p>
+        <span class="font-mono text-xs tracking-[0.3em] text-[color:var(--gold-500)] uppercase">İş Ortaklıklarımız</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-4 text-white font-extrabold">Devam Eden, İş Ortağı Olduğumuz Projeler</h2>
+        <p class="text-stone-300 text-sm mt-4 leading-relaxed">İş ortaklarımızla Türkiye genelinde farklı şehirlerde inşaat çalışmalarımız aralıksız sürüyor.</p>
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <article class="group gold-edge bg-[color:var(--navy-900)] border border-[color:var(--gold-500)]/20 reveal-scale flex flex-col">
         <div class="h-48 relative overflow-hidden">
-          <img loading="lazy" src="assets/dikmen.jpg" alt="HP PANORAMA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Devam Ediyor</span>
-        </div>
-        <div class="p-5 flex flex-col gap-3 flex-1">
-          <div>
-            <p class="font-mono text-[11px] text-stone-400 mb-1 uppercase tracking-wider">Ticari + KONUT · ANKARA</p>
-            <h3 class="font-display text-xl text-white font-bold leading-tight">HP PANORAMA</h3>
-          </div>
-          <div class="mt-auto">
-            <div class="flex items-center justify-between font-mono text-[11px] text-stone-300 mb-1.5">
-              <span>İnşaat İlerlemesi</span><span class="text-[color:var(--gold-400)] font-bold">%11</span>
-            </div>
-            <div class="progress-track progress-track-dark"><div class="progress-fill" style="width:11%"></div></div>
-          </div>
-        </div>
-      </article>
-        
-      <article class="group gold-edge bg-[color:var(--navy-900)] border border-[color:var(--gold-500)]/20 reveal-scale flex flex-col">
-        <div class="h-48 relative overflow-hidden">
           <img loading="lazy" src="assets/gokdemirsuit1.jpg" alt="GÖKDEMİR SUİT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-950)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Devam Ediyor</span>
         </div>
         <div class="p-5 flex flex-col gap-3 flex-1">
@@ -759,6 +813,7 @@
       <article class="group gold-edge bg-[color:var(--navy-900)] border border-[color:var(--gold-500)]/20 reveal-scale flex flex-col">
         <div class="h-48 relative overflow-hidden">
           <img loading="lazy" src="assets/skysuit.jpg" alt="SKY SUİT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-950)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Devam Ediyor</span>
         </div>
         <div class="p-5 flex flex-col gap-3 flex-1">
@@ -778,6 +833,7 @@
       <article class="group gold-edge bg-[color:var(--navy-900)] border border-[color:var(--gold-500)]/20 reveal-scale flex flex-col">
         <div class="h-48 relative overflow-hidden">
           <img loading="lazy" src="assets/oguzkan.jpg" alt="OĞUZKAN AURA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 left-4 font-mono text-[10px] tracking-[0.2em] uppercase bg-[color:var(--navy-950)] text-white px-3 py-1 font-bold">İş Ortağı</span>
           <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Devam Ediyor</span>
         </div>
         <div class="p-5 flex flex-col gap-3 flex-1">
@@ -794,29 +850,6 @@
         </div>
       </article>
 
-      <article class="group gold-edge bg-[color:var(--navy-900)] border border-[color:var(--gold-500)]/20 reveal-scale flex flex-col">
-        <div class="h-48 relative overflow-hidden">
-          <img loading="lazy" src="assets/polioncakirlar2.jpg" alt="POLİON ÇAKIRLAR 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <span class="absolute top-4 right-4 font-mono text-[10px] uppercase bg-[color:var(--gold-500)] text-[color:var(--navy-950)] px-3 py-1 font-bold">Devam Ediyor</span>
-        </div>
-        <div class="p-5 flex flex-col gap-3 flex-1">
-          <div>
-            <p class="font-mono text-[11px] text-stone-400 mb-1 uppercase tracking-wider">Konut · ANKARA</p>
-            <h3 class="font-display text-xl text-white font-bold leading-tight">POLİON ÇAKIRLAR 2</h3>
-          </div>
-          <div class="mt-auto">
-            <div class="flex items-center justify-between font-mono text-[11px] text-stone-300 mb-1.5">
-              <span>İnşaat İlerlemesi</span><span class="text-[color:var(--gold-400)] font-bold">%1</span>
-            </div>
-            <div class="progress-track progress-track-dark"><div class="progress-fill" style="width:1%"></div></div>
-          </div>
-        </div>
-      </article>
-
-      
-      
-
-      
     </div>
   </div>
 </section>
@@ -855,7 +888,7 @@
     <div>
       <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Konu / Sektör</label>
       <select name="Konu" class="w-full border-b-2 border-[color:var(--stone-200)] focus:border-[color:var(--gold-500)] outline-none py-2.5 bg-transparent transition-colors text-slate-700">
-        <option>İnşaat & Taahhüt</option>
+        <option>Müteahhitlik & Taahhüt</option>
         <option>Taşeronluk Hizmetleri</option>
         <option>Yeni Diyarbakır Seyahat (Otobüs)</option>
         <option>Diğer</option>
@@ -932,6 +965,7 @@
         <p class="font-mono text-xs uppercase text-white mb-4 tracking-wider">Hızlı Erişim</p>
         <ul class="space-y-2 text-xs">
           <li><a href="#home" class="hover:text-[color:var(--gold-400)]">Ana Sayfa</a></li>
+          <li><a href="#muteahhitlik" class="hover:text-[color:var(--gold-400)]">Müteahhitlik Projelerimiz</a></li>
           <li><a href="#tarihce" class="hover:text-[color:var(--gold-400)]">Tarihçe</a></li>
           <li><a href="#grup-sirketleri" class="hover:text-[color:var(--gold-400)]">Grup Şirketlerimiz</a></li>
           <li><a href="#projeler" class="hover:text-[color:var(--gold-400)]">Tamamlanan Projeler</a></li>
